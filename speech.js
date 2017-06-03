@@ -189,29 +189,6 @@
       window.location.href = 'mailto:?subject=' + subject + '&body=' + body;
     }
 
-    function copyButton() {
-      if (recognizing) {
-        recognizing = false;
-        recognition.stop();
-      }
-      copy_button.style.display = 'none';
-      copy_info.style.display = 'inline-block';
-      showInfo('');
-    }
-
-    function emailButton() {
-      if (recognizing) {
-        create_email = true;
-        recognizing = false;
-        recognition.stop();
-      } else {
-        createEmail();
-      }
-      email_button.style.display = 'none';
-      email_info.style.display = 'inline-block';
-      showInfo('');
-    }
-
     function startButton(event) {
       if (recognizing) {
         recognition.stop();
