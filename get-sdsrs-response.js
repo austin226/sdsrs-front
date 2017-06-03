@@ -2,14 +2,23 @@ function getServerResponse(inputText) {
     console.log('Processing - "' + inputText + '"');
     // TODO send user input off to server
 
-    var responseText = "This is a sample response. Yo yo yo!";
+    var dfd = $.Deferred();
 
-    console.log('Received response - "' + responseText + '"');
-    return responseText;
+    $.when($.post({
+        url: 'api.php',
+        data: {
+            userInput: inputText
+        }
+    })).then(function(response) {
+        console.log('Received response - "' + response.responseText + '"');
+        dfd.resolve(response.responseText);
+    });
+
+    return dfd.promise();
 }
 
 function actOnSpeechRecognitionResult(text) {
-    var response = getServerResponse(text);
-
-    $('#response_from_sdsrs').text(response);
+    $.when(getServerResponse(text)).then(function(responseText) {
+        $('#response_from_sdsrs').text(responseText);
+    });
 }
