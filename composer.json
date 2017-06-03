@@ -2,7 +2,6 @@
     "name": "austin/sdsrs-front",
     "type": "project",
     "require": {
-        "google/cloud": "^0.32.1"
     },
     "license": "AGPLv3",
     "authors": [
