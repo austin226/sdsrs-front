@@ -1,3 +1,4 @@
+// Copied from https://github.com/GoogleChrome/webplatform-samples/blob/master/webspeechdemo/webspeechdemo.html
     var langs =
     [['Afrikaans',       ['af-ZA']],
      ['Bahasa Indonesia',['id-ID']],
