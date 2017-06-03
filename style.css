@@ -63,7 +63,7 @@ a:hover {
     color: #777;
     visibility: hidden;
 }
-#results {
+.results {
     font-size: 14px;
     font-weight: bold;
     border: 1px solid #ddd;
