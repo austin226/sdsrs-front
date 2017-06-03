@@ -137,6 +137,8 @@ if (!('webkitSpeechRecognition' in window)) {
       range.selectNode(document.getElementById('final_span'));
       window.getSelection().addRange(range);
     }
+
+    actOnSpeechRecognitionResult(final_transcript);
   };
 
   recognition.onresult = function(event) {
