@@ -82,7 +82,6 @@
       select_dialect.style.visibility = list[1].length == 1 ? 'hidden' : 'visible';
     }
 
-    var create_email = false;
     var final_transcript = '';
     var recognizing = false;
     var ignore_onend;
@@ -138,10 +137,6 @@
           range.selectNode(document.getElementById('final_span'));
           window.getSelection().addRange(range);
         }
-        if (create_email) {
-          create_email = false;
-          createEmail();
-        }
       };
 
       recognition.onresult = function(event) {
@@ -173,16 +168,6 @@
     var first_char = /\S/;
     function capitalize(s) {
       return s.replace(first_char, function(m) { return m.toUpperCase(); });
-    }
-
-    function createEmail() {
-      var n = final_transcript.indexOf('\n');
-      if (n < 0 || n >= 80) {
-        n = 40 + final_transcript.substring(40).indexOf(' ');
-      }
-      var subject = encodeURI(final_transcript.substring(0, n));
-      var body = encodeURI(final_transcript.substring(n + 1));
-      window.location.href = 'mailto:?subject=' + subject + '&body=' + body;
     }
 
     function startButton(event) {
