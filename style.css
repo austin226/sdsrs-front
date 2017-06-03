@@ -72,7 +72,7 @@ a:hover {
     min-height: 150px;
 }
 #start_button {
-    border: 0;
+    /*border: 0;*/
     background-color:transparent;
     padding: 0;
 }
