@@ -1,4 +1,4 @@
-// Copied from https://github.com/GoogleChrome/webplatform-samples/blob/master/webspeechdemo/webspeechdemo.html
+// Based on https://github.com/GoogleChrome/webplatform-samples/blob/master/webspeechdemo/webspeechdemo.html
     var langs =
     [['Afrikaans',       ['af-ZA']],
      ['Bahasa Indonesia',['id-ID']],
@@ -156,9 +156,6 @@
         final_transcript = capitalize(final_transcript);
         final_span.innerHTML = linebreak(final_transcript);
         interim_span.innerHTML = linebreak(interim_transcript);
-        if (final_transcript || interim_transcript) {
-          showButtons('inline-block');
-        }
       };
     }
 
@@ -200,7 +197,6 @@
       final_span.innerHTML = '';
       interim_span.innerHTML = '';
       showInfo('info_allow');
-      showButtons('none');
       start_timestamp = event.timeStamp;
     }
 
@@ -215,12 +211,4 @@
       } else {
         info.style.visibility = 'hidden';
       }
-    }
-
-    var current_style;
-    function showButtons(style) {
-      if (style == current_style) {
-        return;
-      }
-      current_style = style;
     }
