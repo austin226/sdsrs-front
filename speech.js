@@ -90,7 +90,6 @@
     if (!('webkitSpeechRecognition' in window)) {
       upgrade();
     } else {
-      start_button.style.display = 'inline-block';
       var recognition = new webkitSpeechRecognition();
       recognition.continuous = true;
       recognition.interimResults = true;
@@ -98,7 +97,7 @@
       recognition.onstart = function() {
         recognizing = true;
         showInfo('info_speak_now');
-        $('#start_button').text('Listening...');
+        $('#start_button').text('Listening, click again to stop');
       };
 
       recognition.onerror = function(event) {

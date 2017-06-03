@@ -20,6 +20,9 @@ limitations under the License.
     <head>
         <meta charset="utf-8">
         <title>SDSRS - Spoken Dialog Speech Recognition System</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
         <script
           src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -27,9 +30,27 @@ limitations under the License.
           crossorigin="anonymous"></script>
     </head>
     <body>
-        <h1 class="center" id="headline"> SDSRS </h1>
+        <div class="jumbotron">
+            <h1>SDSRS</h1>
+            <h2>Spoken-Dialog Spaced Repetition System</h2>
+        </div>
         <div class="container">
-            <div class="col-md-10">
+            <div class="row">
+                <p>
+                    Click "Start Recording" to interact with the system, and click again when you are done
+                    speaking. The system will display and read you the response.
+                </p>
+            </div>
+            <br>
+            <div class="row">
+                <div class="text-center">
+                    <button id="start_button" onclick="startButton(event)" class="btn btn-primary btn-block">
+                        Start recording
+                    </button>
+                </div>
+            </div>
+            <br>
+            <div class="row">
                 <div id="info">
                   <p id="info_start"></p>
                   <p id="info_speak_now">Speak now.</p>
@@ -48,17 +69,20 @@ limitations under the License.
                      Upgrade to <a href="//www.google.com/chrome">Chrome</a>
                      version 25 or later.</p>
                 </div>
-                <div class="center">
-                    <button id="start_button" onclick="startButton(event)">Start recording</button>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="results" class="results">
+                      <span id="final_span" class="final"></span>
+                      <span id="interim_span" class="interim">Your speech will appear here</span>
+                      <p>
+                    </div>
                 </div>
-                <div id="results" class="results">
-                  <span id="final_span" class="final"></span>
-                  <span id="interim_span" class="interim">Your speech will appear here</span>
-                  <p>
-                </div>
-                <div id="response_from_sdsrs" class="results">
-                  <span id="response_final_span" class="final"></span>
-                  <span id="response_interim_span" class="interim">The response from the system will appear here</span>
+                <div class="col-md-6">
+                    <div id="response_from_sdsrs" class="results">
+                      <span id="response_final_span" class="final"></span>
+                      <span id="response_interim_span" class="interim">The response from the system will appear here</span>
+                    </div>
                 </div>
             </div>
             <div class="center">
@@ -69,6 +93,16 @@ limitations under the License.
               </div>
             </div>
         </div>
-    <script src="speech.js"></script>
+        <script src="speech.js"></script>
+        <footer class="footer">
+            <p class="text-muted">
+                SDSRS Copyright &copy; 2017 <a href="https://github.com/austin226">Austin Almond</a>.
+                <br>
+                Client based on <a href=https://github.com/GoogleChrome/webplatform-samples/tree/master/webspeechdemo">Google Web Speech API Demo</a>.
+                Anki service provided by <a href="https://github.com/dsnopek/anki-sync-server">dsnopek/anki-sync-server</a>
+                via <a href="https://github.com/austin226/sdsrs-anki-server">austin226/sdsrs-anki-server</a>
+                and <a href="https://github.com/austin226/sdsrs">austin226/sdsrs</a>.
+            </p>
+        </footer>
     </body>
 </html>
