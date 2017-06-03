@@ -17,8 +17,17 @@ function getServerResponse(inputText) {
     return dfd.promise();
 }
 
+function speakText(text) {
+    var msg = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(msg);
+}
+
 function actOnSpeechRecognitionResult(text) {
     $.when(getServerResponse(text)).then(function(responseText) {
+        // Display text output
         $('#response_from_sdsrs').text(responseText);
+
+        // Read text out load
+        speakText(responseText);
     });
 }
