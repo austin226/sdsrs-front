@@ -8,8 +8,7 @@ if (!isset($_POST['userInput'])) {
 $configData = json_decode(file_get_contents('config.json'), true);
 $accessToken = $configData['accessToken'];
 
-//$userInput = $_POST['userInput'];
-$userInput = "What are my collections?";
+$userInput = $_POST['userInput'];
 
 $apiAiRequestData = [
     'query' => $userInput,
