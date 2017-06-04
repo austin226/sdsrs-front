@@ -25,7 +25,7 @@ function speakText(text) {
 function actOnSpeechRecognitionResult(text) {
     $.when(getServerResponse(text)).then(function(responseText) {
         // Display text output
-        $('#response_from_sdsrs').text(responseText);
+        $('#response_from_sdsrs').html(responseText);
 
         // Read text out load
         speakText(responseText);
