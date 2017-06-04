@@ -1,6 +1,5 @@
 function getServerResponse(inputText) {
     console.log('Processing - "' + inputText + '"');
-    // TODO send user input off to server
 
     var dfd = $.Deferred();
 

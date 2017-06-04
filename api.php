@@ -2,7 +2,7 @@
 
 if (!isset($_POST['userInput'])) {
     http_response_code(400);
-    //die('Need post data - userInput');
+    die('Need post data - userInput');
 }
 
 $configData = json_decode(file_get_contents('config.json'), true);
