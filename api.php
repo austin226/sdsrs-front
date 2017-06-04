@@ -33,8 +33,8 @@ curl_close($curl);
 $output = $serverOutput['result']['fulfillment']['messages'][0]['speech'];
 
 header('Content-Type: application/json');
-echo json_encode(
-    ['responseText' => $output],
-    ['apiRequest' => $apiAiRequestData],
-    ['apiResponse' => $serverOutput]
-);
+echo json_encode([
+    'responseText' => $output,
+    'apiRequest' => $apiAiRequestData,
+    'apiResponse' => $serverOutput
+]);
