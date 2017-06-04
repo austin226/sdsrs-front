@@ -28,10 +28,10 @@ $curlHeaders = [
     'Content-Type: application/json'
 ];
 curl_setopt($curl, CURLOPT_HTTPHEADER, $curlHeaders);
-$serverOutput = curl_exec($curl);
+$serverOutput = json_decode(curl_exec($curl), true);
 curl_close($curl);
 
-var_dump($serverOutput);
+$output = $serverOutput['result']['fulfillment']['messages'][0]['speech'];
 
 header('Content-Type: application/json');
 echo json_encode(['responseText' => $output]);
