@@ -30,7 +30,15 @@ curl_setopt($curl, CURLOPT_HTTPHEADER, $curlHeaders);
 $serverOutput = json_decode(curl_exec($curl), true);
 curl_close($curl);
 
-$output = $serverOutput['result']['fulfillment']['messages'][0]['speech'];
+$output = "";
+$outputMessages = $serverOutput['result']['fulfillment']['messages'];
+foreach ($outputMessages as $message) {
+    $output .= $message['speech']."<br>";
+}
 
 header('Content-Type: application/json');
-echo json_encode(['responseText' => $output]);
+echo json_encode([
+    'responseText' => $output,
+    'apiRequest' => $apiAiRequestData,
+    'apiResponse' => $serverOutput
+]);

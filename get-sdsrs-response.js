@@ -10,6 +10,7 @@ function getServerResponse(inputText) {
         }
     })).then(function(response) {
         console.log('Received response - "' + response.responseText + '"');
+        console.log(response);
         dfd.resolve(response.responseText);
     });
 
@@ -24,7 +25,7 @@ function speakText(text) {
 function actOnSpeechRecognitionResult(text) {
     $.when(getServerResponse(text)).then(function(responseText) {
         // Display text output
-        $('#response_from_sdsrs').text(responseText);
+        $('#response_from_sdsrs').html(responseText);
 
         // Read text out load
         speakText(responseText);
