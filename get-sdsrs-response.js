@@ -10,6 +10,7 @@ function getServerResponse(inputText) {
         }
     })).then(function(response) {
         console.log('Received response - "' + response.responseText + '"');
+        console.log(response);
         dfd.resolve(response.responseText);
     });
 
