@@ -87,6 +87,7 @@ limitations under the License.
             </div>
             <br>
             <div class="row hidden">
+                <!-- Language selection disabled -->
               <div id="div_language">
                 Select the language you are using to speak:
                 <select id="select_language" onchange="updateCountry()"></select>
@@ -94,10 +95,35 @@ limitations under the License.
                 <select id="select_dialect"></select>
               </div>
             </div>
+            <div class="row">
+                <h3>How to Use</h3>
+                <p>This is a speech interface for reviewing <strong><a href="https://ankiweb.net">Anki</a></strong> cards.</p>
+                <p>Say <strong>List my collections</strong> to get a list of card collections in the system.</p>
+                <p>
+                    Say <strong>Use collection <em>state capitals</em></strong> to select the <em>state capitals</em> collection,
+                    or say any other collection name to create your own.
+                </p>
+                <div class="col-md-6">
+                    <h4>Reviewing Cards</h4>
+                    <p>Say <strong>Next card</strong> to retrieve the next card you have scheduled. You will be prompted with the front of the card.</p>
+                    <p>
+                        Say <strong>Flip</strong> or <strong>What's the answer?</strong> to have the back of the card read to you.
+                        You will be prompted to say whether the answer was easy, medium, or hard. This will determine how long the
+                        system waits to show you the card again.
+                    </p>
+                    <p>Say <strong>Reset the scheduler</strong> to re-initialize the scheduler for the collection you selected.</p>
+                </div>
+                <div>
+                    <h4>Creating Cards</h4>
+                    <p>Say <strong>Add a card</strong> to add a card to the selected collection.</p>
+                    <p>You will be prompted for a Front and Back of the card. After you provide these, the card will be added.</p>
+                </div>
+            </div>
         </div>
         <footer class="footer">
             <p class="text-muted">
-                SDSRS Copyright &copy; 2017 <a href="https://github.com/austin226">Austin Almond</a>.
+                SDSRS Copyright &copy; 2017 <a href="https://github.com/austin226">Austin Almond</a>
+                under <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">AGPL v3</a>.
                 <br>
                 Client based on <a href="https://github.com/GoogleChrome/webplatform-samples/tree/master/webspeechdemo">Google Web Speech API Demo</a>.
                 Speech processing provided by <a href="https://api.ai">api.ai</a>.
